@@ -39,7 +39,7 @@ while True:
         try:
             data['phone_number'] = el.find_element_by_css_selector('.section-result-phone-number span').text
         except NoSuchElementException:
-            data['phone_number'] = None
+            continue
         places.append(data)
     try:
         next_page_btn = driver.find_element_by_xpath("//button[@jsaction='pane.paginationSection.nextPage']")
