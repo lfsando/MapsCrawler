@@ -1,6 +1,6 @@
 import json
 from typing import List
-
+import sys
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException, ElementClickInterceptedException
 from selenium.webdriver.common.by import By
@@ -14,7 +14,7 @@ driver.get("https://maps.google.com")
 
 WebDriverWait(driver, 100).until(EC.presence_of_element_located((By.ID, 'searchboxinput')))
 search_box = driver.find_element_by_id('searchboxinput')
-search_box.send_keys('empresa')
+search_box.send_keys(sys.argv[1])
 search_box.send_keys(Keys.ENTER)
 
 WebDriverWait(driver, 100).until(EC.url_contains('search'))
