@@ -1,0 +1,8 @@
+chromedriver.exe
+*.json
+*.xls
+*.xlsx
+*.csv
+*.log
+.idea
+.venv
